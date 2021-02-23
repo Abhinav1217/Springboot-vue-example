@@ -1,0 +1,87 @@
+# Set default behavior to automatically normalize line endings.
+*   text=auto eol=lf
+
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+*.pdf binary
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.gitattributes text
+.gitignore      text
+*.md            text
+
+
+# Exclude files from exporting
+
+.gitattributes  export-ignore
+.gitignore      export-ignore
+
+# Java sources
+*.java          text diff=java
+*.kt            text diff=java
+*.gradle        text diff=java
+*.gradle.kts    text diff=java
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.css           text diff=css
+*.conf          text
+*.df            text
+*.htm           text diff=html
+*.html          text diff=html
+*.js            text
+*.json          text
+*.jsp           text
+*.jspf          text
+*.jspx          text
+*.map           text -diff
+*.vue           text diff=html
+*.properties    text
+*.tld           text
+*.tag           text
+*.tagx          text
+*.txt           text
+*.xml           text diff=xml
+
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.class         binary
+*.dll           binary
+*.ear           binary
+*.jar           binary
+*.so            binary
+*.war           binary
+*.jks           binary
+
+
+# Lockfiles don't generate diff
+*.lock            text -diff
+package-lock.json text -diff
+
+# System Specific Scripts
+*.bash          text eol=lf
+*.bat           text eol=crlf
+*.cmd           text eol=crlf
+*.sh            text eol=lf
+
+
+# Fonts
+*.ttf             binary
+*.eot             binary
+*.otf             binary
+*.woff            binary
+*.woff2           binary
+
+
+# Archives
+*.7z              binary
+*.gz              binary
+*.jar             binary
+*.rar             binary
+*.tar             binary
+*.zip             binary
